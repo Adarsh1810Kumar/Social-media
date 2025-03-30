@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adarsh Advanced AI Content Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 3px solid #3498db;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .topic-chip {
+            transition: all 0.3s ease;
+        }
+        .topic-chip:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+        .btn-secondary {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #667eea;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #667eea; }
+        }
+        .floating { 
+            animation-name: floating;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+        @keyframes floating {
+            0% { transform: translate(0,  0px); }
+            50%  { transform: translate(0, 15px); }
+            100%   { transform: translate(0, -0px); }   
+        }
+        .nims-logo {
+            animation: pulse 2s infinite;
+            background: linear-gradient(135deg, #df1414 0%, #1e40af 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .signature {
+            font-family: 'Brush Script MT', cursive;
+            background: linear-gradient(90deg, #ff8a00, #e52e71);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: rainbow 2s linear infinite;
+            background-size: 200% auto;
+        }
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        .developer-info {
+            background: linear-gradient(135deg, #ae52f4 0%, #6ddbe0 100%);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-top: 1rem;
+            box-shadow: 0 2px 4px hsl(0, 5%, 88%);         
+    </div>
+</div>
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-4 py-8">
+        <div class="text-center mb-10 animate__animated animate__fadeIn">
+            <div class="floating inline-block mb-4">
+                <i class="bi bi-robot text-5xl text-purple-600"></i>
+            </div>
+            <h1 class="text-4xl font-bold text-blue-800 mb-2">Advanced AI Content Generator</h1>
+            <div class="typewriter text-lg text-purple-600 font-medium">Create engaging content in seconds</div>
+            <div class="mt-6 animate__animated animate__fadeInUp animate__delay-1s">
+                <div class="nims-logo inline-block px-6 py-2 mb-2">
+                    <div class="text-lg font-bold tracking-wide">NIMS UNIVERSITY RAJASTHAN JAIPUR</div>
+                    <div class="text-xs">Student of Nims Institute of Engineering & Technology</div>
+                </div>
+                <div class="developer-info inline-block animate__animated animate__fadeIn animate__delay-2s">
+                    <div class="text-sm font-medium text-gray-700">
+                        Developed by <span class="signature font-bold text-lg">Adarsh Kumar</span>
+                    </div>
+                    <div class="text-xs text-white-500 mt-1">
+                        B.Tech CSE 2nd Year (2027 Batch)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-md p-6 mb-8 card animate__animated animate__fadeInUp">
+            <div class="flex items-center mb-4">
+                <i class="bi bi-trending-up text-2xl text-purple-600 mr-3"></i>
+                <h2 class="text-xl font-semibold">Trending Topics</h2>
+            </div>
+            <p class="text-gray-600 mb-4">Discover the latest trends in technology, business, and social media</p>
+            <div id="trendingTopics" class="flex flex-wrap gap-2 mb-4"></div>
+            <div class="loader mx-auto mb-4" id="topicLoader"></div>
+            <button onclick="analyzeTrends()" class="btn-primary text-white font-medium py-3 px-6 rounded-lg flex items-center gap-2 mx-auto">
+                <i class="bi bi-arrow-repeat"></i>
+                Refresh Trends
+            </button>
+        </div>
+        <div class="bg-white rounded-xl shadow-md p-6 card animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="flex items-center mb-4">
+                <i class="bi bi-magic text-2xl text-green-500 mr-3"></i>
+                <h2 class="text-xl font-semibold">Generate Content</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="block text-gray-700 mb-2 font-medium">Selected Topic</label>
+                    <select id="topicSelect" class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        <option value="">Select a topic</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2 font-medium">Content Type</label>
+                    <select id="contentType" class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        <option value="article">Long-form Article</option>
+                        <option value="social">Social Media Post</option>
+                        <option value="video">Video Script</option>
+                        <option value="newsletter">Email Newsletter</option>
+                        <option value="whitepaper">Technical Whitepaper</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2 font-medium">Tone</label>
+                    <select id="contentTone" class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        <option value="professional">Professional</option>
+                        <option value="casual">Casual/Conversational</option>
+                        <option value="technical">Technical/Detailed</option>
+                        <option value="trendy">Trendy/Viral</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2 font-medium">Length</label>
+                    <select id="contentLength" class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        <option value="short">Short (300 words)</option>
+                        <option value="medium" selected>Medium (500 words)</option>
+                        <option value="long">Long (800+ words)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="loader mx-auto mb-4" id="contentLoader"></div>
+            <button onclick="generateContent()" class="btn-secondary text-white font-medium py-3 px-6 rounded-lg flex items-center gap-2 w-full justify-center">
+                <i class="bi bi-lightning-charge-fill"></i>
+                Generate Amazing Content
+            </button>
+        </div>
+        <div id="generatedContent" class="mt-8 bg-white rounded-xl shadow-md p-6 hidden animate__animated animate__fadeInUp animate__delay-2s">
+            <div class="flex justify-between items-center mb-4">
+                <div class="flex items-center">
+                    <i class="bi bi-file-earmark-text text-2xl text-blue-500 mr-2"></i>
+                    <h2 class="text-xl font-semibold">Generated Content</h2>
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="copyToClipboard()" class="text-sm bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-lg flex items-center gap-1 transition-all">
+                        <i class="bi bi-clipboard"></i> Copy
+                    </button>
+                    <button onclick="downloadContent()" class="text-sm bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-lg flex items-center gap-1 transition-all">
+                        <i class="bi bi-download"></i> Download
+                    </button>
+                </div>
+            </div>
+            <div id="contentDisplay" class="prose max-w-none p-4 bg-gray-50 rounded-lg"></div>
+            <div class="mt-4 pt-4 border-t text-sm text-gray-500 flex justify-between items-center">
+                <p>Generated on: <span id="generationDate" class="font-medium"></span></p>
+                <div class="flex items-center">
+                    <span class="mr-2">Developed by</span>
+                    <span class="signature font-bold">Adarsh Kumar</span>
+                    <span class="ml-2">| NIMS University</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const topics = [
+            "Latest AI advancements",
+            "Blockchain applications",
+            "Social media algorithm changes",
+            "Remote work trends",
+            "Sustainable technology",
+            "Cybersecurity threats",
+            "Cloud computing innovations",
+            "Mobile app development trends",
+            "Data privacy regulations",
+            "E-commerce strategies"
+        ];
+        function displayInitialTopics() {
+            const topicsContainer = document.getElementById('trendingTopics');
+            topicsContainer.innerHTML = '';
+            
+            topics.forEach((topic, index) => {
+                const topicElement = document.createElement('span');
+                topicElement.className = `bg-gradient-to-r from-purple-100 to-blue-100 text-purple-800 px-4 py-2 rounded-full text-sm topic-chip cursor-pointer animate__animated animate__fadeInUp animate__delay-${index/10}s`;
+                topicElement.textContent = topic;
+                topicElement.onclick = () => {
+                    document.getElementById('topicSelect').value = topic;
+                    topicElement.classList.add('animate__pulse');
+                    setTimeout(() => {
+                        topicElement.classList.remove('animate__pulse');
+                    }, 1000);
+                };
+                topicsContainer.appendChild(topicElement);
+            });
+            
+            updateTopicSelect();
+        }
+        
+        async function analyzeTrends() {
+            const topicLoader = document.getElementById('topicLoader');
+            const refreshBtn = document.querySelector('button[onclick="analyzeTrends()"]');
+            
+            topicLoader.style.display = 'block';
+            refreshBtn.disabled = true;
+            refreshBtn.innerHTML = '<i class="bi bi-arrow-clockwise animate-spin"></i> Analyzing...';
+            
+            try {
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                const topicsContainer = document.getElementById('trendingTopics');
+                topicsContainer.classList.add('animate__animated', 'animate__fadeOut');
+                
+                setTimeout(() => {
+                    topicsContainer.classList.remove('animate__fadeOut');
+                    displayInitialTopics();
+                    topicsContainer.classList.add('animate__fadeIn');
+                    const successMsg = document.createElement('div');
+                    successMsg.className = 'text-center text-green-500 animate__animated animate__bounceIn mt-2';
+                    successMsg.innerHTML = '<i class="bi bi-check-circle-fill"></i> Trends updated successfully!';
+                    topicsContainer.parentNode.insertBefore(successMsg, topicsContainer.nextSibling);
+                    
+                    setTimeout(() => {
+                        successMsg.classList.remove('animate__bounceIn');
+                        successMsg.classList.add('animate__fadeOut');
+                        setTimeout(() => successMsg.remove(), 500);
+                    }, 2000);
+                }, 500);
+                
+            } catch (error) {
+                console.error('Error:', error);
+                const errorMsg = document.createElement('div');
+                errorMsg.className = 'text-center text-red-500 animate__animated animate__shakeX mt-2';
+                errorMsg.innerHTML = '<i class="bi bi-exclamation-triangle-fill"></i> Failed to update trends';
+                document.getElementById('trendingTopics').parentNode.insertBefore(errorMsg, document.getElementById('topicLoader').nextSibling);
+                
+                setTimeout(() => {
+                    errorMsg.classList.remove('animate__shakeX');
+                    errorMsg.classList.add('animate__fadeOut');
+                    setTimeout(() => errorMsg.remove(), 500);
+                }, 2000);
+            } finally {
+                topicLoader.style.display = 'none';
+                refreshBtn.disabled = false;
+                refreshBtn.innerHTML = '<i class="bi bi-arrow-repeat"></i> Refresh Trends';
+            }
+        }
+
+        function updateTopicSelect() {
+            const select = document.getElementById('topicSelect');
+            select.innerHTML = '<option value="">Select a topic</option>';
+            
+            topics.forEach(topic => {
+                const option = document.createElement('option');
+                option.value = topic;
+                option.textContent = topic;
+                select.appendChild(option);
+            });
+        }
+
+        async function generateContent() {
+            const topic = document.getElementById('topicSelect').value;
+            const contentType = document.getElementById('contentType').value;
+            const tone = document.getElementById('contentTone').value;
+            const length = document.getElementById('contentLength').value;
+            const contentLoader = document.getElementById('contentLoader');
+            const generatedContent = document.getElementById('generatedContent');
+            const contentDisplay = document.getElementById('contentDisplay');
+            const generationDate = document.getElementById('generationDate');
+            const generateBtn = document.querySelector('button[onclick="generateContent()"]');
+
+            if (!topic) {
+                const select = document.getElementById('topicSelect');
+                select.classList.add('animate__animated', 'animate__shakeX', 'border-red-500');
+                setTimeout(() => {
+                    select.classList.remove('animate__shakeX', 'border-red-500');
+                }, 1000);
+                const errorMsg = document.createElement('div');
+                errorMsg.className = 'text-red-500 text-sm mt-1 animate__animated animate__fadeIn';
+                errorMsg.textContent = 'Please select a topic first';
+                select.parentNode.appendChild(errorMsg);
+                
+                setTimeout(() => {
+                    errorMsg.classList.add('animate__fadeOut');
+                    setTimeout(() => errorMsg.remove(), 500);
+                }, 3000);
+                return;
+            }
+            generateBtn.disabled = true;
+            generateBtn.innerHTML = '<i class="bi bi-lightning-charge-fill animate-pulse"></i> Generating...';
+            contentLoader.style.display = 'block';
+            generatedContent.classList.add('hidden');
+
+            try {
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                const now = new Date();
+                generationDate.textContent = now.toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                let content = "";
+                const intro = `In the current digital landscape, ${topic.toLowerCase()} has emerged as one of the most significant developments. `;
+                
+                if (contentType === "article") {
+                    content = `
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800 border-b pb-2">${topic}: Comprehensive Analysis</h3>
+                        ${intro}
+                        <p class="mb-4">The rapid evolution in this domain is transforming business operations and consumer expectations across industries.</p>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg mb-4 border-l-4 border-blue-500">
+                            <h4 class="text-xl font-semibold mb-2 text-blue-800">Key Takeaways</h4>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Current market adoption rates and projections</li>
+                                <li>Major players and their strategic approaches</li>
+                                <li>Potential challenges and opportunities</li>
+                            </ul>
+                        </div>
+                        
+                        <h4 class="text-xl font-semibold mt-6 mb-3 text-gray-700">Recent Developments</h4>
+                        <p class="mb-3">Several noteworthy advancements have occurred in recent months:</p>
+                        <ul class="list-disc pl-5 mb-4 space-y-2">
+                            <li>Breakthrough innovations from leading tech companies</li>
+                            <li>Regulatory updates affecting implementation</li>
+                            <li>Successful case studies demonstrating measurable impact</li>
+                            <li>Emerging best practices and methodologies</li>
+                        </ul>
+                        
+                        <h4 class="text-xl font-semibold mt-6 mb-3 text-gray-700">Strategic Implications</h4>
+                        <p class="mb-3">For organizations looking to maintain competitive advantage:</p>
+                        <ol class="list-decimal pl-5 mb-4 space-y-2">
+                            <li>Assess current capabilities and gaps</li>
+                            <li>Develop phased implementation roadmap</li>
+                            <li>Build cross-functional expertise</li>
+                            <li>Establish metrics for success measurement</li>
+                        </ol>
+                        
+                        <div class="bg-purple-50 p-4 rounded-lg mt-6 border-l-4 border-purple-500">
+                            <h4 class="text-lg font-semibold mb-2 text-purple-800">Expert Insight</h4>
+                            <p>"The acceleration we're seeing in ${topic.toLowerCase()} adoption is unprecedented. Organizations that fail to adapt risk significant disruption to their operations and market position."</p>
+                            <p class="text-right text-sm text-purple-600 mt-2">— Industry Analyst</p>
+                        </div>
+                    `;
+                } else if (contentType === "social") {
+                    content = `
+                        <div class="border-l-4 border-blue-500 pl-4 mb-4 bg-blue-50 p-3 rounded-r-lg">
+                            <p class="font-semibold text-lg mb-2">📢 ${topic} Update</p>
+                            <p class="my-2">The ${topic.toLowerCase()} space is evolving rapidly! Here's what you need to know:</p>
+                            
+                            <div class="bg-white p-3 rounded-lg my-3 shadow-sm">
+                                <p class="my-1">🔹 <span class="font-medium">Adoption Growth:</span> 65% increase in past 6 months</p>
+                                <p class="my-1">🔹 <span class="font-medium">Key Players:</span> New entrants changing the landscape</p>
+                                <p class="my-1">🔹 <span class="font-medium">What's Next:</span> Major announcements expected soon</p>
+                            </div>
+                            
+                            <p class="mt-3 mb-1">Why this matters:</p>
+                            <p class="text-sm bg-white p-2 rounded">${topic} is transforming how businesses operate and engage with customers. Early adopters are seeing 3-5x improvement in key metrics.</p>
+                            
+                            <div class="flex flex-wrap gap-2 mt-3">
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">#${topic.replace(/\s+/g, '')}</span>
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">#TechTrends</span>
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">#DigitalTransformation</span>
+                            </div>
+                        </div>
+                        
+                        <div class="text-sm text-gray-600 bg-gray-50 p-2 rounded-lg">
+                            <p class="font-medium mb-1">💡 Engagement Tips:</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Post during peak hours (9-11am, 1-3pm)</li>
+                                <li>Use 1-2 relevant hashtags</li>
+                                <li>Include eye-catching visuals</li>
+                                <li>Ask a question to encourage comments</li>
+                            </ul>
+                        </div>
+                    `;
+                } else if (contentType === "video") {
+                    content = `
+                        <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                            <h3 class="text-xl font-bold mb-3 text-gray-800">Video Script: "${topic} Explained"</h3>
+                            
+                            <div class="mb-4 p-3 bg-white rounded-lg">
+                                <p class="text-sm text-purple-600 font-medium mb-1">[OPENING HOOK - 0:00-0:15]</p>
+                                <p>"What if I told you that ${topic.toLowerCase()} is changing everything about how we work and live? Stick around because by the end of this video, you'll understand exactly how this affects you and what you should do about it."</p>
+                            </div>
+                            
+                            <div class="mb-4 p-3 bg-white rounded-lg">
+                                <p class="text-sm text-purple-600 font-medium mb-1">[MAIN CONTENT - 0:15-1:30]</p>
+                                <p class="mb-2">"Right now, we're seeing three major developments in ${topic.toLowerCase()}:</p>
+                                <ol class="list-decimal pl-5 space-y-1">
+                                    <li>The breakthrough that changed everything</li>
+                                    <li>How leading companies are implementing this</li>
+                                    <li>What the critics are saying</li>
+                                </ol>
+                            </div>
+                            
+                            <div class="mb-4 p-3 bg-white rounded-lg">
+                                <p class="text-sm text-purple-600 font-medium mb-1">[CASE STUDY - 1:30-2:45]</p>
+                                <p>"Let's look at how Company X implemented ${topic.toLowerCase()} and saw incredible results..."</p>
+                                <ul class="list-disc pl-5 mt-1 space-y-1">
+                                    <li>150% increase in efficiency</li>
+                                    <li>40% cost reduction</li>
+                                    <li>Improved customer satisfaction</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="p-3 bg-white rounded-lg">
+                                <p class="text-sm text-purple-600 font-medium mb-1">[CALL TO ACTION - 2:45-3:00]</p>
+                                <p>"Here are three things you can do right now to take advantage of ${topic.toLowerCase()}:</p>
+                                <p class="mt-2">1. First actionable step<br>2. Second actionable step<br>3. Third actionable step</p>
+                                <p class="mt-2">Don't forget to like and subscribe for more content like this!"</p>
+                            </div>
+                        </div>
+                        
+                        <div class="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
+                            <p class="font-medium mb-1">🎥 Production Notes:</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Use B-roll footage for demonstration</li>
+                                <li>Add animated infographics for statistics</li>
+                                <li>Include captions for accessibility</li>
+                                <li>Optimal length: 3-5 minutes</li>
+                            </ul>
+                        </div>
+                    `;
+                } else {
+                    content = `
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800 border-b pb-2">${topic}: Professional Analysis</h3>
+                        ${intro}
+                        <p class="mb-4">This comprehensive overview examines the current state and future potential of ${topic.toLowerCase()} based on the latest available data and expert insights.</p>
+                        
+                        <div class="grid md:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                                <h4 class="text-lg font-semibold mb-2 text-blue-800">Current Status</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Market size and growth rate</li>
+                                    <li>Key industry players</li>
+                                    <li>Adoption challenges</li>
+                                </ul>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                                <h4 class="text-lg font-semibold mb-2 text-green-800">Future Outlook</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Projected developments</li>
+                                    <li>Emerging opportunities</li>
+                                    <li>Potential risks</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-xl font-semibold mt-6 mb-3 text-gray-700">Implementation Strategies</h4>
+                        <p class="mb-3">For organizations considering ${topic.toLowerCase()} adoption:</p>
+                        <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                            <div class="grid md:grid-cols-3 gap-3">
+                                <div class="bg-white p-3 rounded shadow-sm">
+                                    <p class="font-medium text-blue-600">Short-term (0-6 months)</p>
+                                    <ul class="list-disc pl-5 text-sm mt-1 space-y-1">
+                                        <li>Assessment and planning</li>
+                                        <li>Pilot programs</li>
+                                        <li>Skill development</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white p-3 rounded shadow-sm">
+                                    <p class="font-medium text-purple-600">Medium-term (6-18 months)</p>
+                                    <ul class="list-disc pl-5 text-sm mt-1 space-y-1">
+                                        <li>Full implementation</li>
+                                        <li>Process integration</li>
+                                        <li>Performance measurement</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white p-3 rounded shadow-sm">
+                                    <p class="font-medium text-green-600">Long-term (18+ months)</p>
+                                    <ul class="list-disc pl-5 text-sm mt-1 space-y-1">
+                                        <li>Optimization</li>
+                                        <li>Scaling</li>
+                                        <li>Innovation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+                if (tone === "casual") {
+                    content = content.replace(/organizations/gi, "companies")
+                                     .replace(/implementation/gi, "use")
+                                     .replace(/methodologies/gi, "ways")
+                                     .replace(/comprehensive/gi, "complete");
+                } else if (tone === "technical") {
+                    content = content.replace(/companies/gi, "organizations")
+                                    .replace(/use/gi, "implementation")
+                                    .replace(/ways/gi, "methodologies")
+                                    .replace(/complete/gi, "comprehensive");
+                } else if (tone === "trendy") {
+                    content = content.replace(/organizations/gi, "teams")
+                                    .replace(/implementation/gi, "rollout")
+                                    .replace(/methodologies/gi, "hacks")
+                                    .replace(/comprehensive/gi, "ultimate");
+                }
+                if (length === "short") {
+                    content = content.replace(/<h4 class="text-xl font-semibold mt-6 mb-3 text-gray-700">Strategic Implications<\/h4>.*?<ol class="list-decimal pl-5 mb-4 space-y-2">.*?<\/ol>/gs, '');
+                } else if (length === "long") {
+                    const extraContent = `
+                        <h4 class="text-xl font-semibold mt-6 mb-3 text-gray-700">Additional Considerations</h4>
+                        <p class="mb-3">When evaluating ${topic.toLowerCase()} solutions:</p>
+                        <ul class="list-disc pl-5 mb-4 space-y-2">
+                            <li>Integration with existing systems</li>
+                            <li>Vendor selection criteria</li>
+                            <li>Total cost of ownership</li>
+                            <li>Change management requirements</li>
+                            <li>Training and support needs</li>
+                        </ul>
+                    `;
+                    content = content.replace('</div>', extraContent + '</div>');
+                }
+                
+                contentDisplay.innerHTML = content;
+                generatedContent.classList.remove('hidden');
+                generatedContent.classList.add('animate__animated', 'animate__fadeInUp');
+                
+            } catch (error) {
+                console.error('Error:', error);
+                const errorMsg = document.createElement('div');
+                errorMsg.className = 'text-center text-red-500 animate__animated animate__shakeX mt-4';
+                errorMsg.innerHTML = '<i class="bi bi-exclamation-triangle-fill"></i> Failed to generate content. Please try again.';
+                document.getElementById('contentLoader').parentNode.insertBefore(errorMsg, document.getElementById('contentLoader').nextSibling);
+                
+                setTimeout(() => {
+                    errorMsg.classList.remove('animate__shakeX');
+                    errorMsg.classList.add('animate__fadeOut');
+                    setTimeout(() => errorMsg.remove(), 500);
+                }, 3000);
+            } finally {
+                contentLoader.style.display = 'none';
+                generateBtn.disabled = false;
+                generateBtn.innerHTML = '<i class="bi bi-lightning-charge-fill"></i> Generate Amazing Content';
+            }
+        }
+        
+        function copyToClipboard() {
+            const content = document.getElementById('contentDisplay').innerText;
+            navigator.clipboard.writeText(content).then(() => {
+                const copyBtn = document.querySelector('button[onclick="copyToClipboard()"]');
+                const originalHtml = copyBtn.innerHTML;
+                copyBtn.innerHTML = '<i class="bi bi-check2"></i> Copied!';
+                copyBtn.classList.add('bg-green-100', 'text-green-800');
+                
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalHtml;
+                    copyBtn.classList.remove('bg-green-100', 'text-green-800');
+                }, 2000);
+            });
+        }
+        
+        function downloadContent() {
+            const content = document.getElementById('contentDisplay').innerText;
+            const topic = document.getElementById('topicSelect').value || 'generated-content';
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${topic.toLowerCase().replace(/\s+/g, '-')}-content.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            const downloadBtn = document.querySelector('button[onclick="downloadContent()"]');
+            const originalHtml = downloadBtn.innerHTML;
+            downloadBtn.innerHTML = '<i class="bi bi-check2"></i> Downloaded!';
+            downloadBtn.classList.add('bg-green-100', 'text-green-800');
+            
+            setTimeout(() => {
+                downloadBtn.innerHTML = originalHtml;
+                downloadBtn.classList.remove('bg-green-100', 'text-green-800');
+            }, 2000);
+        }
+        displayInitialTopics();
+    </script>
+</body>
+</html>       
